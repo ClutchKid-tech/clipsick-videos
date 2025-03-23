@@ -54,7 +54,7 @@ function displayTopTenGames(genre) {
 async function loadFunnyAndClutchMoments(game, genre) {
     const mainContent = document.getElementById("main-content");
     mainContent.innerHTML = `<h2>${game} - Funny & Clutch Moments</h2><div id="funny-moments"><h3>Top Ten Funniest Moments</h3><ul id="funny-videos"></ul></div><div id="clutch-moments"><h3>Top Ten Clutch Moments</h3><ul id="clutch-videos"></ul></div>`;
-    const funnyVideosList = document.getElementById("funny-videos").querySelector("ul");
+    const funnyVideosList = document.getElementById("funny-moments").querySelector("ul");
     const clutchVideosList = document.getElementById("clutch-moments").querySelector("ul");
 
     const funnyQuery = `Top 10 funniest moments in ${game} gameplay`;
@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", function(event) {
             event.preventDefault();
             const genre = this.dataset.genre;
+            console.log("Genre link clicked:", genre);
             displayTopTenGames(genre);
         });
     });
