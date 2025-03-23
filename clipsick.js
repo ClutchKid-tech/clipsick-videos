@@ -18,8 +18,10 @@ const videoGrid = document.getElementById("video-grid");
 
 Object.keys(clipsickData).forEach(game => {
     const li = document.createElement("li");
-    li.textContent = game;
-    li.addEventListener("click", () => loadVideos(game));
+    const button = document.createElement("button"); // Use a button for accessibility
+    button.textContent = game;
+    button.addEventListener("click", () => loadVideos(game));
+    li.appendChild(button);
     gameList.appendChild(li);
 });
 
@@ -30,11 +32,13 @@ function loadVideos(game) {
         card.className = "video-card";
         card.innerHTML = `
             <img src="${video.url}" alt="${video.title}">
-            <h3>${video.title}</h3>
-            <p>${video.views} views</p>
+            <div class="video-details">
+              <h3>${video.title}</h3>
+              <p>${video.views} views</p>
+            </div>
         `;
         videoGrid.appendChild(card);
     });
 }
 
-loadVideos("Fortnite");
+loadVideos("Fortnite"); // Load Fortnite videos initially
