@@ -3,22 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clipsick Videos</title>
+    <title>Clipsick Videos - Game Clips</title>
+    <meta name="description" content="Explore a curated collection of exciting game clips from various popular games.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>Clipsick Videos</h1>
+        <p>The best of the best game clips!</p>
+    </header>
+
     <div class="container">
         <aside class="sidebar">
             <h2>Games</h2>
-            <ul id="game-list"></ul>
+            <nav>
+                <ul id="game-list"></ul>
+            </nav>
         </aside>
         <main class="content">
-            <h1>Clipsick Videos</h1>
-            <p>The best of the best clips!</p>
-            <div id="video-grid" class="video-grid"></div>
+            <section id="video-section">
+                <div id="video-grid" class="video-grid"></div>
+            </section>
             <a href="index.html" class="switch-link">Back to GameClip Repository</a>
         </main>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Clipsick Videos</p>
+    </footer>
+
     <script src="clipsick.js"></script>
 </body>
 </html>
