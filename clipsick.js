@@ -32,10 +32,14 @@ async function searchYouTubeVideos(query) {
 }
 
 function displayTopTenGames(genre) {
+    console.log("displayTopTenGames called for:", genre); // Check if the function is called
     const mainContent = document.getElementById("main-content");
+    console.log("mainContent element:", mainContent); // Check if the mainContent element is found
     mainContent.innerHTML = `<h2>Top Ten ${genre.charAt(0).toUpperCase() + genre.slice(1)} Games</h2><ul id="${genre}-top-games"></ul>`;
     const topGamesList = document.getElementById(`${genre}-top-games`);
+    console.log("topGamesList element:", topGamesList); // Check if the topGamesList element is found
     const games = topTenGamesData[genre];
+    console.log("games data:", games); // Check if the games data is retrieved
 
     if (games) {
         games.forEach(game => {
@@ -48,6 +52,7 @@ function displayTopTenGames(genre) {
         });
     } else {
         mainContent.innerHTML = `<p>No top ten games found for ${genre}.</p>`;
+        console.log("No top ten games found for genre:", genre); // Check if this branch is executed
     }
 }
 
