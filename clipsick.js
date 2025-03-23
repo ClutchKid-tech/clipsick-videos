@@ -1,44 +1,53 @@
 const clipsickData = {
-    "Fortnite": [
-        { id: 3, title: "Build Battle Win", views: 700, url: "https://via.placeholder.com/200?text=Video+3" }
+    "Action Games": [
+        { id: 1, title: "Epic Boss Fight", views: 1200, embedUrl: "YOUR_ACTION_VIDEO_EMBED_URL_1" },
+        { id: 2, title: "High-Speed Chase", views: 950, embedUrl: "YOUR_ACTION_VIDEO_EMBED_URL_2" },
+        // Add more action game videos here
     ],
-    "Minecraft": [
-        { id: 4, title: "Creeper Surprise", views: 400, url: "https://via.placeholder.com/200?text=Video+4" }
+    "Adventure Games": [
+        { id: 3, title: "Exploring Ancient Ruins", views: 780, embedUrl: "YOUR_ADVENTURE_VIDEO_EMBED_URL_1" },
+        { id: 4, title: "Unraveling the Mystery", views: 620, embedUrl: "YOUR_ADVENTURE_VIDEO_EMBED_URL_2" },
+        // Add more adventure game videos here
     ],
-    "Call of Duty": [
-        { id: 6, title: "Last Second Grenade", views: 600, url: "https://via.placeholder.com/200?text=Video+6" }
+    "Strategy Games": [
+        { id: 5, title: "Flawless Victory", views: 1500, embedUrl: "YOUR_STRATEGY_VIDEO_EMBED_URL_1" },
+        { id: 6, title: "Building the Ultimate Base", views: 1100, embedUrl: "YOUR_STRATEGY_VIDEO_EMBED_URL_2" },
+        // Add more strategy game videos here
     ],
-    "Apex Legends": [
-        { id: 9, title: "Wraith Portal Play", views: 800, url: "https://via.placeholder.com/200?text=Video+9" }
-    ]
+    // Add more game genres and their videos here
 };
 
-const gameList = document.getElementById("game-list");
-const videoGrid = document.getElementById("video-grid");
+function loadVideos(genre, videos) {
+    const videoGrid = document.querySelector(`#${genre.toLowerCase().replace(/ /g, '-')}-games .video-grid`);
 
-Object.keys(clipsickData).forEach(game => {
-    const li = document.createElement("li");
-    const button = document.createElement("button"); // Use a button for accessibility
-    button.textContent = game;
-    button.addEventListener("click", () => loadVideos(game));
-    li.appendChild(button);
-    gameList.appendChild(li);
-});
+    if (!videoGrid) {
+        console.error(`Video grid not found for genre: ${genre}`);
+        return;
+    }
 
-function loadVideos(game) {
-    videoGrid.innerHTML = "";
-    clipsickData[game].forEach(video => {
-        const card = document.createElement("div");
-        card.className = "video-card";
-        card.innerHTML = `
-            <img src="${video.url}" alt="${video.title}">
-            <div class="video-details">
-              <h3>${video.title}</h3>
-              <p>${video.views} views</p>
-            </div>
-        `;
-        videoGrid.appendChild(card);
-    });
+    videoGrid.innerHTML = ""; // Clear previous videos
+
+    if (videos && videos.length > 0) {
+        videos.forEach(video => {
+            const videoContainer = document.createElement("div");
+            videoContainer.className = "video-container";
+            videoContainer.innerHTML = `
+                <iframe width="560" height="315" src="${video.embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-details">
+                    <h3>${video.title}</h3>
+                    <p>${video.views} views</p>
+                </div>
+            `;
+            videoGrid.appendChild(videoContainer);
+        });
+    } else {
+        videoGrid.innerHTML = "<p>No videos available for this genre yet.</p>";
+    }
 }
 
-loadVideos("Fortnite"); // Load Fortnite videos initially
+// Load videos for each genre
+for (const genre in clipsickData) {
+    if (clipsickData.hasOwnProperty(genre)) {
+        loadVideos(genre, clipsickData[genre]);
+    }
+}
