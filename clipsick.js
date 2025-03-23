@@ -4,6 +4,12 @@ const clipsickData = {
     ],
     "Minecraft": [
         { id: 4, title: "Creeper Surprise", views: 400, url: "https://via.placeholder.com/200?text=Video+4" }
+    ],
+    "Call of Duty": [
+        { id: 6, title: "Last Second Grenade", views: 600, url: "https://via.placeholder.com/200?text=Video+6" }
+    ],
+    "Apex Legends": [
+        { id: 9, title: "Wraith Portal Play", views: 800, url: "https://via.placeholder.com/200?text=Video+9" }
     ]
 };
 
