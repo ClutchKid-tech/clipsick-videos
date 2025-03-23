@@ -5,7 +5,16 @@ const videoData = {
         { id: 3, title: "Build Battle Win", views: 700, url: "https://via.placeholder.com/200?text=Video+3" }
     ],
     "Minecraft": [
-        { id: 4, title: "Creeper Surprise", views: 400, url: "https://via.placeholder.com/200?text=Video+4" }
+        { id: 4, title: "Creeper Surprise", views: 400, url: "https://via.placeholder.com/200?text=Video+4" },
+        { id: 5, title: "Insane Parkour", views: 250, url: "https://via.placeholder.com/200?text=Video+5" }
+    ],
+    "Call of Duty": [
+        { id: 6, title: "Last Second Grenade", views: 600, url: "https://via.placeholder.com/200?text=Video+6" },
+        { id: 7, title: "Funny Team Wipe", views: 350, url: "https://via.placeholder.com/200?text=Video+7" }
+    ],
+    "Apex Legends": [
+        { id: 8, title: "Clutch Revive", views: 450, url: "https://via.placeholder.com/200?text=Video+8" },
+        { id: 9, title: "Wraith Portal Play", views: 800, url: "https://via.placeholder.com/200?text=Video+9" }
     ]
 };
 
