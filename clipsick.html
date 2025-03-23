@@ -3,35 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clipsick Videos - Game Clips</title>
-    <meta name="description" content="Explore a curated collection of exciting game clips from various popular games.">
+    <title>Clipsick Videos</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>Clipsick Videos</h1>
-        <p>The best of the best game clips!</p>
+        <nav>
+            <ul>
+                <li><a href="#action-games">Action</a></li>
+                <li><a href="#adventure-games">Adventure</a></li>
+                <li><a href="#strategy-games">Strategy</a></li>
+                </ul>
+        </nav>
     </header>
 
-    <div class="container">
-        <aside class="sidebar">
-            <h2>Games</h2>
-            <nav>
-                <ul id="game-list"></ul>
-            </nav>
-        </aside>
-        <main class="content">
-            <section id="video-section">
-                <div id="video-grid" class="video-grid"></div>
-            </section>
-            <a href="index.html" class="switch-link">Back to GameClip Repository</a>
+    <main>
+        <section id="action-games">
+            <h2>Action Games</h2>
+            <div class="video-grid">
+                </div>
+        </section>
+
+        <section id="adventure-games">
+            <h2>Adventure Games</h2>
+            <div class="video-grid">
+                </div>
+        </section>
+
+        <section id="strategy-games">
+            <h2>Strategy Games</h2>
+            <div class="video-grid">
+                </div>
+        </section>
+
         </main>
-    </div>
 
     <footer>
-        <p>&copy; 2024 Clipsick Videos</p>
+        <p>&copy; 2025 Clipsick Videos</p>
     </footer>
 
+    <script src="script.js"></script>
     <script src="clipsick.js"></script>
 </body>
 </html>
